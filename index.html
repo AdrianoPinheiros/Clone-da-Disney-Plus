@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/animate-css/animate.min.css">
+  <link rel="stylesheet" href="assets/bulma/css/bulma.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Disney plus</title>
+
+</head>
+
+<body class="is-blue">
+
+  <!-- START NAVBAR  -->
+
+  <!-- START LOGO MENU E BUTTON HAMBURGUER  -->
+  <nav class="navbar is-fixed-top has-background-blue" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="img/logo.png" width="112" height="122">
+      </a>
+      <a role="button" class="navbar-burger has-text-white" onclick="menuShow()" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <!-- START NAVBAR ITENS  -->
+    <div id="navbarBasicExample" class="navbar-menu">
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <p class=" column is-256x256">
+              <a class="button is-medium is-link">
+                ASSINE AGORA
+              </a>
+            </p>
+            <p class=" column is-256x256">
+              <a class="button is-medium is-dark">
+                ENTRAR
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- END NAVBAR  -->
+
+  <!-- START HERO -->
+  <section class="hero is-small py-6">
+    <div class="hero-body">
+
+      <div class="container has-text-centered">
+        <div class="columns is-vcentered is-gapless">
+
+          <!-- START HERO COLUMN LEFT  -->
+          <div class="column is-5" style="z-index: 5;">
+            <figure class="image is-256x256">
+              <img src="img/logo.png" alt="Description"><br>
+              <figcaption class="subtitle is-4 has-text-white">As melhores histórias em um só lugar.</figcaption>
+            </figure>
+            <div class="columns">
+              <p class="column py-6">
+                <img src="img/promo2.png" alt="">
+                <a class="button is-medium is-link">
+                  ASSINE AGORA
+                </a>
+              </p>
+              <p class=" column py-6">
+                <img class="pt-4" src="img/promo3.png" alt="">
+                <a class="button is-medium is-link">
+                  ASSINE AGORA
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="column is-8" style="z-index: 0;">
+            <figure class="image is-fullwidth">
+              <img src="img/Disney-Plus_2.jpg" alt="Description">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AND HERO  -->
+
+  <!-- start servicos  -->
+  <div class="container">
+    <div class="section">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title has-text-white">Escolha seu plano</h1><br><br>
+        </div>
+      </div>
+
+      <div id="app" class="row columns is-multiline">
+
+
+        <!-- CARD 1  -->
+        <div v-for="card in cardData" key="card.id" class="column is-4 py-6">
+          <div class="card large has-text-centered" style="background-color: transparent;">
+            <div class="card-image">
+              <figure class="image">
+                <img src="img/promo1.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4 no-padding has-text-white">R$ 27,90/mês</p>
+                  <p>
+                    <span class="title is-6 has-text-white">
+                      No Disney+ você encontra as últimas estreias do cinema, originais e clássicos inesquecíveis.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="content has-text-centered">
+                <a class="button is-medium is-link is-outlined">
+                  ASSINE AGORA
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2  -->
+        <div v-for="card in cardData" key="card.id" class="column is-4 py-6">
+          <div class="card large has-text-centered card-3"
+            style="background-color: #13092b; border-top: 12px solid #281969; border-left: 7px solid #281969; border-right: 7px solid #281969;">
+            <div class="card-image">
+              <figure class="image">
+                <img src="img/promo2.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4 no-padding has-text-white">R$ 45,90/mês*</p>
+                  <p>
+                    <span class="title is-6 has-text-white">
+                      Assine Disney+ e Star+ juntos. Economize e aproveite agora os dois serviços por um preço único.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="content has-text-centered">
+                <a class="button is-medium is-link is-outlined">
+                  ASSINE AGORA
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3  -->
+        <div v-for="card in cardData" key="card.id" class="column is-4 py-6">
+          <div class="card large has-text-centered" style="background-color: transparent;">
+            <div class="card-image">
+              <figure class="image">
+                <img src="img/promo3.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4 no-padding has-text-white">R$ 55,90/mês*</p>
+                  <p>
+                    <span class="title is-6 has-text-white">
+                      Assine Disney+ e Star+ juntos. Economize e aproveite agora os dois serviços por um preço único.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="content has-text-centered">
+                <a class="button is-medium is-link is-outlined">
+                  ASSINE AGORA
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end servicos  -->
+
+  <!-- START HERO -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="columns is-vcentered">
+        <div class="column is-6">
+          <figure class="image is-4by3">
+            <img src="img/dispo.png" alt="Description">
+          </figure>
+        </div>
+
+        <div class="column is-6 has-text-left py-6">
+          <h1 class="title has-text-white">
+            Assista do seu jeito
+          </h1><br>
+          <p class="subtitle has-text-white">
+            Aproveite a tela grande da TV ou assista no tablet, laptop, celular e outros aparelhos. Nossa seleção de
+            títulos em 4K não para de crescer. Além disso, para a felicidade de todos, é possível assistir em até 4
+            telas ao mesmo tempo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AND HERO  -->
+
+  <section class="hero is-small pt-6">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title has-text-white">
+          Originais Disney+ exclusivos
+        </p>
+        <p class="subtitle has-text-white">
+          Só no Disney+ você vê os melhores filmes, séries, curtas e outros conteúdos inéditos.
+        </p><br><br>
+      </div>
+    </div>
+  </section>
+  <section class="container">
+
+    <div class="columns features">
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria1.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria2.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria3.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns features">
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria4.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria5.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria6.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns features">
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria7.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria8.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGEM  -->
+      <div class="column is-4">
+        <div class="card is-shady">
+          <div class="card-image has-background-blue">
+            <figure class="image is-4by3 efect-img">
+              <img src="img/galeria9.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- START HERO -->
+  <div class="hero-body ">
+    <div class="container has-text-centered" style="padding-top: 80px;">
+      <div class="columns is-vcentered">
+        <div class="column">
+          <figure class="image is-4by3">
+            <img src="img/king.png" alt="Description">
+          </figure>
+        </div>
+        <div class="column is-6 has-text-left">
+          <h1 class="title has-text-white">
+            Baixe filmes e séries
+          </h1><br>
+          <p class="subtitle has-text-white">
+            Baixe e assista quando e onde quiser. Assim, seus favoritos estão sempre com você, até mesmo sem internet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- AND HERO  -->
+
+
+  <!-- start dispositivo  -->
+  <div class="container">
+    <div class="section">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title has-text-white">Disponível nos seus dispositivos favoritos</h1><br><br>
+        </div>
+      </div>
+
+      <div id="app" class="row columns is-multiline">
+
+
+        <!-- CARD 1  -->
+        <div v-for="card in cardData" key="card.id" class="column is-3">
+          <div class="card large has-text-centered" style="background-color: transparent;">
+            <div class="card-image">
+              <figure class="image">
+                <img src="img/dispositivos-a.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4 no-padding has-text-white">Computador</p>
+                  <p>
+                    <span class="title is-6 has-text-white">
+                      Chrome OS<br>
+                      MacOS<br>
+                      PC Windows<br>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2  -->
+        <div v-for="card in cardData" key="card.id" class="column is-3">
+          <div class="card large has-text-centered" style="background-color: transparent;">
+            <div class="card-image">
+              <figure class="image">
+                <img src="img/dispositivos-b.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4 no-padding has-text-white">TV</p>
+                  <p>
+                    <span class="title is-6 has-text-white">
+                      Amazon Fire TV<br>
+                      Android TV<br>
+                      Apple TV<br>
+                      Chromecast<br>
+                      TVs LG<br>
+                      Roku<br>
+                      Samsung
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3  -->
+        <div v-for="card in cardData" key="card.id" class="column is-3">
+          <div class="card large has-text-centered" style="background-color: transparent;">
+            <div class="card-image">
+              <figure class="image">
+                <img src="img/dispositivos-c.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4 no-padding has-text-white">Video games</p>
+                  <p>
+                    <span class="title is-6 has-text-white">
+                      PS4<br>
+                      PS5<br>
+                      Xbox One<br>
+                      Xbox Series X<br>
+                      Xbox Series S
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4  -->
+        <div v-for="card in cardData" key="card.id" class="column is-3">
+          <div class="card large has-text-centered" style="background-color: transparent;">
+            <div class="card-image">
+              <figure class="image">
+                <img src="img/dispositivos-d.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5 no-padding has-text-white">Celulares e tablets</p>
+                  <p>
+                    <span class="title is-6 has-text-white">
+                      Tablets Amazon Fire <br>
+                      Celulares e Tablets Android <br>
+                      iPhone e iPad
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end dispositivo -->
+
+
+  <!-- START FOOTER  -->
+  <footer class="footer has-background-blue">
+    <div class="content has-text-centered has-text-white">
+      <p>
+        ® 2023 Disney, Disney+ e The Walt Disney Company. Todos os direitos reservados. Serviço de assinatura paga.
+        Conteúdo sujeito a disponibilidade.
+      </p>
+
+      <p>
+        Disney+ é um serviço pago, baseado em assinatura e sujeito a termos e condições. O serviço Disney+ é
+        comercializado por The Walt Disney Company (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas, 12.551,
+        12.555, 12.559, Piso 10, São Paulo/SP – CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20</span>
+      </p>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+</body>
+
+</html>

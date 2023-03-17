@@ -1,0 +1,9 @@
+.efect-img:hover{
+  animation: rubberBand; 
+  animation-duration: 800ms; 
+}
+
+.button:hover{
+  animation: pulse; 
+  animation-duration: 800ms; 
+}
